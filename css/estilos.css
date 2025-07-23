@@ -1,0 +1,113 @@
+article{
+    background-color: #00FF90;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-spacing: 50px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+section{
+    background-color: #D1F5D8;
+    border-radius: 10px;
+    padding: 20px;
+    border-spacing: 10px;
+    box-shadow: 0px 2px gray 0 0 0 0.5;
+   
+}
+#Datos{
+    margin-bottom: 15px
+}
+footer{
+    background-color: bisque;
+}
+#titulo{
+    text-align: center;
+}
+footer{
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    padding: 20px;
+}
+#MAPA{
+    padding-bottom: 20%;
+}
+th{
+    border:solid black
+}
+.row{
+    border: solid black;
+}
+tbody{
+    border: solid black;
+}
+.elite{
+    background-color: red;
+}
+table{
+    border-collapse: collapse;
+}
+#Cupos{
+    width: 150px;
+}
+#Carreraconsulta{
+    width: 80px;
+}
+#DatosRef,#EstadisticasRef{
+    margin-bottom: 10px;
+    margin-right: 1px;
+    margin-left: -1px;
+}
+#SeleccionCarreras,#SeleccionCorredor{
+    
+    width: auto;
+    min-width: 80px;
+    max-width: 300px;
+}
+#carreraSELEC{
+   size: 5;
+}
+.select-carrera{
+    width: 80px;
+}
+#AgregarCarrera{
+    text-align: center;
+    width: 150px;
+    display: block;
+}
+.Pad{
+    margin-right: 19px;
+}
+#NomSelect,#Elite{
+    margin-left: 20px;
+}
+
+
+#Comun,#Elite,#NumSelect,#NomSelect,#OrdenSelec,.TIPOdeCORREDOR{
+    display: inline;
+}
+
+label{
+    display: block;
+    
+}
+label.Pad{
+    display: inline-block;
+}
+
+#DatosRef,#EstadisticasRef{
+    width: 90px;
+}
+#AgregarPatrocinador,#InscripcionBoton,#Vencimiento,#Carreraconsulta{
+    display: block;
+}
+caption{
+    padding-top: 25px;
+}
+#Mapaamostrar{
+    width: 80%;
+    height: 90%;
+    margin-right:auto ;
+}

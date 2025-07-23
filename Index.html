@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title> Obligatorio 1 </title>
+        <meta name="viewport" content = "width=device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="css/estilos.css">
+        <script src="js/Clases.js"></script>
+        <script src="js/Funciones.js"></script>
+        <script  src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="js/mapa.js"></script>
+      
+    </head>
+    <body>
+      <header id="titulo">
+        <h1> Sitio de Corredores</h1>
+        <img src="Imagenes/ImagenParcial.png" alt="Imagen Sitio de Corredores" id="imagen">
+      </header>
+        <input type="button" id="DatosRef" value="Datos">
+        <input type="button" id="EstadisticasRef" value="Estadisticas">
+        <section id="Datos">
+            <h2>Datos</h2>   
+            <article id="CARRERA">
+                <h3>Carreras</h3>
+                <ol>
+                    <li> numerada</li>
+                </ol>
+                <ul>
+                    <li> puntos</li>
+                </ul>
+                <form id="CarreraFormu">
+                <label for="NombreCAR">Nombre:</label>
+                <input type="text" id="NombreCAR" required>
+                <label for="Departamento">Departamento:</label>
+                <select id="Departamento">
+                <option value="Montevideo" selected>Montevideo</option>
+                <option value="Canelones">Canelones</option>
+                <option value="Maldonado">Maldonado</option>
+                <option value="Rocha">Rocha</option>
+                <option value="Treinta y Tres">Treinta y Tres</option>
+                <option value="Cerro Largo">Cerro Largo</option>
+                <option value="Rivera">Rivera</option>
+                <option value="Artigas">Artigas</option>
+                <option value="Salto">Salto</option>
+                <option value="Paysandú">Paysandú</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Soriano">Soriano</option>
+                <option value="Colonia">Colonia</option>
+                <option value="San José">San José</option> 
+                <option value="Flores">Flores</option>          
+                <option value="Florida">Florida</option>
+                <option value="Lavalleja">Lavalleja</option>
+                <option value="Durazno">Durazno</option>
+                <option value="Tacuarembó">Tacuarembó</option>
+            </select>
+            <label for="Fechas">Fecha:</label>
+            <input type="date" id="Fechas" required>
+            <label for="Cupos">Cupo:</label>
+            <input type="number" id="Cupos" min="1" max="1000"  placeholder="30" required>
+            <input type="button" id="AgregarCarrera" value="Agregar Carrera">
+            </form>
+            </article>
+
+            <article id="Patrocinador">
+                <h3>Patrocinadores</h3>
+                <form id="PatrocinadorFormul">
+                <label for="NombrePAR">Nombre:</label>
+                <input type="text" id="NombrePAR" required>
+                <label for="Rubro">Rubro:</label>
+                <select id="Rubro" >
+                    <option value="Alimentos">Alimenticio</option>
+                    <option value="Bancario">Banco</option>
+                    <option value="Bebida">Bebida</option>
+                    <option value="Farmaco">Farmacia</option>
+                    <option value="Deporte">Ropa Deportiva</option>
+                    <option value="Estado">Estatal</option>
+                    <option value="Otro">General</option>
+                </select>
+                <label for="carreraSELEC">Carreras:</label>
+                <select multiple id="carreraSELEC" class="select-carrera" required></select>
+                <input type="button" id="AgregarPatrocinador" value="Agregar/Actualizar Patrocinador">
+                </form>
+            </article>
+
+            <article id="Corredor">
+                <h3>Corredores</h3>
+                <form id="CorredorFormu">
+                <label for="NombreCOR">Nombre:</label>
+                <input type="text" id="NombreCOR" required>
+                <label for="EdadCOR">Edad:</label>
+                <input type="number" id="EdadCOR" min="18" required>
+                <label for="Cedula">Cédula:</label>
+                <input type="text" id="Cedula" required >
+                <label for="Vencimiento">Fecha de vencimiento de ficha médica:</label>
+                <input type="date" id="Vencimiento" required>
+                <p class="TIPOdeCORREDOR">Tipo de corredor:</p>
+                <input type="radio" id="Elite" class="Pad"   name="TipoCorredor" value="1">
+                <label for="Elite" class="Pad">Deportista de élite</label>
+                <input type="radio" id="Comun" class="Pad"  name="TipoCorredor" value="2" checked>
+                <label for="Comun" class="Pad" >Deportista Común</label>
+                <br>
+                <input type="button" id="AgregarCorredor" value="Agregar Corredor">
+                </form>
+            </article>
+
+            <article id="Inscripcion">
+                <h3>Inscripciones</h3>
+                <form id="InscripFormu">
+                <label for="SeleccionCorredor">Corredores:</label>
+                
+                <select id="SeleccionCorredor">
+                </select>
+                
+                <label for="SeleccionCarreras">Carreras:</label>
+                
+                <select id="SeleccionCarreras">
+                </select>
+                
+                <input type="button" id="InscripcionBoton" value="Inscribir">
+                </form>
+            </article>
+        </section>
+
+
+
+        <section id="Estadistica">
+            <h2>Estadisticas</h2>
+            <article id="General">
+                <h3>Datos generales</h3>
+                <p>Promedio de inscriptos por carrera: <span id="Promedio">sin datos</span></p>
+                <p>Carrera/s con más inscriptos:</p>
+                <ul>
+                    <li id="maximo">sin datos</li>
+                </ul>
+                <p>Carrera sin inscriptos ordenadas por fecha:</p>
+                <ul id="sinInscriptos">
+                </ul>
+
+                <p>Porcentaje de corredores de élite: <span id="Porcentaje">sin datos</span></p>
+            </article>
+            <article id="consulta">
+                <h3> Consulta inscriptos</h3>
+                <label for="Carreraconsulta">Carrera:</label>
+                <select id="Carreraconsulta">
+                </select>
+                
+                <label for="NomSelect" id="OrdenSelec">Ordenar por:</label>
+                <input type="radio" id="NomSelect" class="Pad" name="Orden" value="1" checked>
+                <label for="NomSelect" class="Pad">Nombre</label>
+                <input type="radio" id="NumSelect" class="Pad" name="Orden" value="2">
+                <label for="NumSelect" class="Pad">Número</label>
+            
+            
+            <table id="TABLA" >
+            <caption>Inscriptos</caption>
+            <thead id="CabezaTabla">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Cédula</th>
+                    <th>Ficha Medica</th>
+                    <th>Número</th>
+                </tr>
+            </thead>
+            <tbody id="CuerpoTabla">
+            </tbody>
+            </table>
+            </article>
+            <article id="MAPA">
+                <h3>Visualizar Mapa: </h3>
+                <input type="radio" id="CarrerasMap" class="Pad" name="Mapselec" value="1" checked>
+                <label for="CarrerasMap" class="Pad">Por Carreras</label>
+                <input type="radio" id="InscripcionesMap" class="Pad" name="Mapselec" value="2">
+                <label for="InscripcionesMap" class="Pad">Por Inscripciones</label>
+                <ul id="Mapaamostrar"></ul>
+            </article>
+            
+        </section>
+        <br>
+        <br>
+        <footer>
+            <p>Programacion 1</p>
+        </footer>
+    </body>
+</html>
